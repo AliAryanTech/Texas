@@ -31,7 +31,7 @@ class Yui_OpenAI():
     async def ask_yui(self, question, chat_log=None):
         if not chat_log:
             chat_log = defaults.Chat_Log
-        prmpt = f"{chat_log}You: {question}\nTexαs:"
+        prmpt = f"{chat_log}You: {question}\nTexas:"
         response = completion.create(
             prompt=prmpt, engine=self.engine, stop=["\nYou"], temperature=0.9,
             top_p=1, frequency_penalty=0, presence_penalty=0.6, best_of=1,

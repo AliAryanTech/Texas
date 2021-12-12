@@ -41,7 +41,7 @@ class Yui_OpenAI():
     async def append_and_save_chat_log(self, question, answer, user_id, chat_log=None):
         if not chat_log:
             chat_log = defaults.Chat_Log
-        chat_log = f"{chat_log}You: {question}\nYui: {answer}\n"
+        chat_log = f"{chat_log}You: {question}\nTexas: {answer}\n"
         defaults.CHAT_LOG_DB[int(user_id)] = str(chat_log)
     
     async def get_chat_log(self, user_id):

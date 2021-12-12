@@ -13,7 +13,7 @@ class Defaults():
     """
     Chat_Log = """
 You: Hey, Wassup?
-Texαs:
+Texas:
 """
     Engine = "davinci-instruct-beta-v3"
     Max_Tokens = 100

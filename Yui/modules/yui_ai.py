@@ -110,16 +110,15 @@ To set an engine use `/engine` command followed by the engine code name you want
 @yuiai.on_message(filters.command("help"))
 async def help_yui(_, message: Message):
     help_msg = """
-**✨ Help Section**
-
+✨ **Help Section**
 
 **How to change OpenAI engine 🤔?**
 - To change OpenAI Engine use `/engine` command followed by the engine name. For more info send /engine command
 
 **How to ban someone from Bot 🤔?**
-    - This is a chat bot tho. WHy you need to ban someone? If it's necessary use `/ban` command (Only for Heroku Users)
+- This is a chat bot tho. WHy you need to ban someone? If it's necessary use `/ban` command (Only for Heroku Users)
 
 
-**Made with ❤️ by @NexaBotsUpdates**
+**Made with ❤️ by @AnimeListChat**
 """
     await message.reply(help_msg, reply_to_message_id=message.message_id)

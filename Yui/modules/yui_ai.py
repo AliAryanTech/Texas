@@ -13,7 +13,7 @@ from config import Config
 yui_bot_id = int(Config.BOT_TOKEN.split(":")[0])
 
 # Chat
-@yuiai.on_message(~filters.command(["engine", "help", "ban"]) & ~filters.edited & ~filters.via_bot)
+@yuiai.on_message(~filters.command(["engine", "help", "restart"]) & ~filters.edited & ~filters.via_bot)
 async def talk_with_yui(_, message: Message):
     c_type = message.chat.type
     r_msg = message.reply_to_message
@@ -110,15 +110,26 @@ To set an engine use `/engine` command followed by the engine code name you want
 @yuiai.on_message(filters.command("help"))
 async def help_yui(_, message: Message):
     help_msg = """
-✨ **Help Section**
+**Texαs Help Section** ✨
 
 **How to change OpenAI engine 🤔?**
-- To change OpenAI Engine use `/engine` command followed by the engine name. For more info send /engine command
+• To change OpenAI Engine use `/engine` command followed by the engine name. For more info send /engine command
 
 **How to ban someone from Bot 🤔?**
-- This is a chat bot tho. WHy you need to ban someone? If it's necessary use `/ban` command (Only for Heroku Users)
+• This is a chat bot tho. Why you need to ban someone? If it's necessary use "banable" branch and send `/ban` command (Only for Heroku Users)
 
 
 **Made with ❤️ by @AnimeListChat**
 """
     await message.reply(help_msg, reply_to_message_id=message.message_id)
+
+
+# Restart Heroku App
+@yuiai.on_message(filters.command("restart"))
+async def restart_yui(_, message: Message):
+    if Config.ON_HEROKU:
+        yui_base = Yui_Base()
+        await message.reply("`Restarting Yui, Please wait...!`")
+        await yui_base.restart_yui()
+    else:
+        await message.reply("**This command is available only for Heroku users**")

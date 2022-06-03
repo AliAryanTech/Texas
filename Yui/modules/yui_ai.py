@@ -129,7 +129,7 @@ async def help_yui(_, message: Message):
 async def restart_yui(_, message: Message):
     if Config.ON_HEROKU:
         yui_base = Yui_Base()
-        await message.reply("`Restarting Yui, Please wait...!`")
+        await message.reply("`Restarting Texas ✨, Please wait...!`")
         await yui_base.restart_yui()
     else:
         await message.reply("**This command is available only for Heroku users**")

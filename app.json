@@ -1,7 +1,7 @@
 {
-    "name": "Yui",
+    "name": "Texas",
     "description": "Simple Telegram AI Chat bot made using OpenAI and Luna API",
-    "logo": "https://telegra.ph//file/af53660a0306db2653fe6.jpg",
+    "logo": "https://telegra.ph/file/f60b0026ce4e08c6c5da7.jpg",
     "keywords": [
         "ai",
         "Telegram Bot",
@@ -9,7 +9,7 @@
         "telegram chat bot"
     ],
     "website": "https://t.me/NexaBotsUpdates",
-    "repository": "https://github.com/Itz-fork/Yui",
+    "repository": "https://github.com/AliAryanTech/Texas",
     "success_url": "https://t.me/NexaBotsUpdates",
     "env": {
         "APP_ID": {
@@ -27,6 +27,10 @@
         "BOT_TOKEN": {
             "description": "Your Bot Token From @BotFather",
             "required": true
+        },
+        "DEFAULT_CHATBOT": {
+            "description": "The Default chatbot you want to use after OpenAI. Read README for more info.",
+            "required": false
         },
         "HEROKU_API": {
             "description": "Your Heroku API Key, Read the README for more info",
